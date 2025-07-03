@@ -1,0 +1,76 @@
+{
+  "courses": [
+    {
+      "name": "Wandern für Anfänger (ab 12)",
+      "description": "Geführte Einsteigerwanderungen mit Tipps zu Ausrüstung, Orientierung und Sicherheit im Gelände.",
+      "image": "wandern.jpg",
+      "location": "Eingang Hauptgebäude",
+      "date": "2025-07-09",
+      "time": "08:00 - 15:30",
+      "age": "12",
+      "materials": "Rucksack, Wanderschuhe, eine Flasche Wasser, etwas zum Grillen, gute Laune",
+      "feedback": {
+        "enabled": true,
+        "type": "rating",
+        "hint": "Bewerten Sie den Kurs mit 1 bis 5 Sternen."
+      },
+      "rating": null,
+      "rating_timestamp": null,
+      "comment": null
+    },
+    {
+      "name": "Survival-Training (ab 16)",
+      "description": "Lernen, wie man ohne moderne Hilfsmittel in der Natur überlebt. Feuer machen, einen Unterschlupf bauen und Wasser finden.",
+      "image": "survival.PNG",
+      "location": "Eingang Hauptgebäude",
+      "date": "2025-07-11",
+      "time": "08:00 - 15:30",
+      "age": "16",
+      "materials": "Rucksack, Wanderschuhe, eine Flasche Wasser, etwas zum Grillen, Messer",
+      "feedback": {
+        "enabled": true,
+        "type": "rating",
+        "hint": "Bewerten Sie den Kurs mit 1 bis 5 Sternen."
+      },
+      "rating": null,
+      "rating_timestamp": null,
+      "comment": null
+    },
+    {
+      "name": "Bogenschiessen (ab 10)",
+      "description": "Einführung in traditionelles Bogenschiessen in Wald- oder Feldumgebung.",
+      "image": "wandern.jpg",
+      "location": "Eingang Hauptgebäude",
+      "date": "2025-07-10",
+      "time": "13:15 - 15:30",
+      "age": "10",
+      "materials": "eine Flasche Wasser",
+      "feedback": {
+        "enabled": true,
+        "type": "rating",
+        "hint": "Bewerten Sie den Kurs mit 1 bis 5 Sternen."
+      },
+      "rating": null,
+      "rating_timestamp": null,
+      "comment": null
+    },
+    {
+      "name": "Kräuterwanderung (ab 8)",
+      "description": "Geführte Tour durch Wald und Wiese mit Fokus auf essbare Wildkräuter und deren Anwendung.",
+      "image": "wandern.jpg",
+      "location": "Eingang Hauptgebäude",
+      "date": "2025-07-01",
+      "time": "08:00 - 11:45",
+      "age": "8",
+      "materials": "Rucksack, Wanderschuhe, eine Flasche Wasser",
+      "feedback": {
+        "enabled": true,
+        "type": "rating",
+        "hint": "Bewerten Sie den Kurs mit 1 bis 5 Sternen."
+      },
+      "rating": null,
+      "rating_timestamp": null,
+      "comment": null
+    }
+  ]
+}

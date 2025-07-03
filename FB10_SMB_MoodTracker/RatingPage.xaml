@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Class="FB10_SMB_MoodTracker.RatingPage"
+             Title="Kurs bewerten">
+    <VerticalStackLayout Padding="20" Spacing="16">
+        <Label Text="{Binding Course.Name}" FontAttributes="Bold" FontSize="22"/>
+        <Label Text="Bewertung (1-5 Sterne):"/>
+        <Picker>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type sys:Int32}">
+                    <sys:Int32>1</sys:Int32>
+                    <sys:Int32>2</sys:Int32>
+                    <sys:Int32>3</sys:Int32>
+                    <sys:Int32>4</sys:Int32>
+                    <sys:Int32>5</sys:Int32>
+                </x:Array>
+            </Picker.ItemsSource>
+            <Picker.SelectedItem>
+                <Binding Path="Rating" Mode="TwoWay" />
+            </Picker.SelectedItem>
+        </Picker>
+        <Label Text="Kommentar:"/>
+        <Editor Text="{Binding Comment, Mode=TwoWay}" AutoSize="TextChanges" HeightRequest="80"/>
+        <Button Text="Speichern" Command="{Binding SaveRatingCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

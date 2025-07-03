@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="FB10_SMB_MoodTracker.MainPage"
+             x:Name="MainPageRoot">  
+
+    <ScrollView>  
+        <VerticalStackLayout>  
+            <Grid HeightRequest="261" WidthRequest="411">  
+                <Image Source="tree.png"  
+                       Aspect="AspectFill"  
+                       Opacity="0.75" />  
+                <Label Text="Ferien Plausch"  
+                       Style="{StaticResource Baloo2Headline}"  
+                       HorizontalOptions="Center"  
+                       VerticalOptions="Center"  
+                       TextColor="White">  
+                    <Label.Shadow>  
+                        <Shadow Brush="Black" Offset="2,2" Opacity="0.5" Radius="4" />  
+                    </Label.Shadow>  
+                </Label>  
+            </Grid>  
+
+            <Label Text="Angebote"  
+                   Style="{StaticResource SubHeadline}"  
+                   FontSize="30"  
+                   FontAttributes="Bold"  
+                   TextColor="#79B791"  
+                   HorizontalOptions="Center"  
+                   Margin="0,20,0,10" />  
+
+            <CollectionView x:Name="courseListView" ItemsSource="{Binding Courses}" SelectionMode="None">  
+                <CollectionView.ItemTemplate>  
+                    <DataTemplate>  
+                        <Border Margin="10"  
+                                Padding="10"  
+                                Background="#E0E0E0">  
+                            <Border.StrokeShape>  
+                                <RoundRectangle CornerRadius="12" />  
+                            </Border.StrokeShape>  
+                            <Border.Shadow>  
+                                <Shadow Brush="#888" Offset="4,4" Opacity="0.3" Radius="8" />  
+                            </Border.Shadow>  
+                            <VerticalStackLayout Spacing="8">  
+                                <Border>  
+                                    <Border.GestureRecognizers>  
+                                        <TapGestureRecognizer  
+                                            Command="{Binding Source={x:Reference MainPageRoot}, Path=BindingContext.NavigateToDetailCommand}"  
+                                            CommandParameter="{Binding .}" />  
+                                    </Border.GestureRecognizers>  
+
+                                    <Image Source="{Binding Image}"  
+                                           HeightRequest="267"  
+                                           Aspect="AspectFill"  
+                                           Margin="0,0,0,8" />  
+                                </Border>  
+                                <Label Text="{Binding Name}"  
+                                       FontAttributes="Bold"  
+                                       FontSize="20"  
+                                       TextColor="#79B791" />  
+                                <Label Text="{Binding Description}"  
+                                       FontSize="18"  
+                                       TextColor="#000000"  
+                                       LineBreakMode="WordWrap" />  
+                                <Label Text="Eigene Bewertung abschicken"  
+                                       FontSize="18"  
+                                       TextColor="#3B82F6"  
+                                       LineBreakMode="WordWrap">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={x:Reference MainPageRoot}, Path=BindingContext.NavigateToRatingCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </VerticalStackLayout>  
+                        </Border>  
+                    </DataTemplate>  
+                </CollectionView.ItemTemplate>  
+            </CollectionView>  
+        </VerticalStackLayout>  
+    </ScrollView>  
+
+</ContentPage>
