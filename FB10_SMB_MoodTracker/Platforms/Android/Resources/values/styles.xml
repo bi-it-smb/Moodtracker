@@ -1,0 +1,6 @@
+<resources>
+	<style name="Maui.SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+		<!-- Passen Sie hier Ihre Farben und Attribute an -->
+		<item name="android:windowBackground">@drawable/maui_splash</item>
+	</style>
+</resources>

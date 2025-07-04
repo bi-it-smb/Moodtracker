@@ -39,7 +39,7 @@
     {
       "name": "Bogenschiessen (ab 10)",
       "description": "Einführung in traditionelles Bogenschiessen in Wald- oder Feldumgebung.",
-      "image": "wandern.jpg",
+      "image": "bogen.PNG",
       "location": "Eingang Hauptgebäude",
       "date": "2025-07-10",
       "time": "13:15 - 15:30",
@@ -57,7 +57,7 @@
     {
       "name": "Kräuterwanderung (ab 8)",
       "description": "Geführte Tour durch Wald und Wiese mit Fokus auf essbare Wildkräuter und deren Anwendung.",
-      "image": "wandern.jpg",
+      "image": "kraeuter.PNG",
       "location": "Eingang Hauptgebäude",
       "date": "2025-07-01",
       "time": "08:00 - 11:45",

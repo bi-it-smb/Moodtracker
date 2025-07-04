@@ -26,12 +26,6 @@ public partial class RatingPageViewModel : ObservableObject
     [RelayCommand]
     public async Task SaveRatingAsync()
     {
-        if (Rating == null)
-        {
-            await Shell.Current.DisplayAlert("Fehler", "Bitte geben Sie eine Bewertung ab.", "OK");
-            return;
-        }
-
         Course.Rating = Rating;
         Course.Comment = Comment;
 

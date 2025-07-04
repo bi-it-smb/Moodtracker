@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              x:Class="FB10_SMB_MoodTracker.RatingPage"
-             Title="Kurs bewerten">
+             Title="Zurück zu Angebote">
     <VerticalStackLayout Padding="20" Spacing="16">
         <Label Text="{Binding Course.Name}" FontAttributes="Bold" FontSize="22"/>
         <Label Text="Bewertung (1-5 Sterne):"/>
