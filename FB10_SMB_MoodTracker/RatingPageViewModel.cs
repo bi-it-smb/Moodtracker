@@ -1,13 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.IO;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace FB10_SMB_MoodTracker;
 
 public partial class RatingPageViewModel : ObservableObject
 {
+    private readonly RatingRepository repository = new RatingRepository();
+
     public Course Course { get; }
 
     [ObservableProperty]
@@ -19,29 +19,44 @@ public partial class RatingPageViewModel : ObservableObject
     public RatingPageViewModel(Course course)
     {
         Course = course;
-        Rating = course.Rating;
-        Comment = course.Comment;
+        LoadRating();
     }
 
+    // Gets the saved rating from the repository
+    private async void LoadRating()
+    {
+        var saved = await repository.GetRatingAsync(Course.Name);
+        if (saved != null)
+        {
+            Rating = saved.Rating;
+            Comment = saved.Comment;
+        }
+        else
+        {
+            Rating = null;
+            Comment = string.Empty;
+        }
+    }
+
+    // Saves the rating and comment. It won't save if no rating was selected.
     [RelayCommand]
     public async Task SaveRatingAsync()
     {
-        Course.Rating = Rating;
-        Course.Comment = Comment;
-
-        var file = Path.Combine(FileSystem.AppDataDirectory, "courses.json");
-        if (File.Exists(file))
+        if (Rating == null)
         {
-            var json = await File.ReadAllTextAsync(file);
-            var courseData = JsonSerializer.Deserialize<CourseData>(json);
-            var courseInList = courseData?.Courses?.Find(c => c.Name == Course.Name);
-            if (courseInList != null)
-            {
-                courseInList.Rating = Rating;
-                courseInList.Comment = Comment;
-                var newJson = JsonSerializer.Serialize(courseData, new JsonSerializerOptions { WriteIndented = true });
-                await File.WriteAllTextAsync(file, newJson);
-            }
+            await Application.Current.MainPage.DisplayAlert("Fehler", "Bitte wählen Sie eine Bewertung (1-5 Sterne) aus.", "OK");
+            return;
         }
+
+        var entry = new RatingEntry
+        {
+            CourseName = Course.Name,
+            Rating = Rating,
+            Comment = Comment
+        };
+
+        await repository.UpsertRatingAsync(entry);
+
+        await Application.Current.MainPage.DisplayAlert("Erfolg", "Bewertung wurde gespeichert.", "OK");
     }
 }

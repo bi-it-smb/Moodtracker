@@ -3,13 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FB10_SMB_MoodTracker.DetailPage"
              Title="Zurück zu Angebote">
-    <VerticalStackLayout>
-        <Image Source="{Binding Course.Image}" HeightRequest="267" Aspect="AspectFill" Margin="0,0,0,8"/>
-        <Label Text="{Binding Course.Name}" FontAttributes="Bold" FontSize="24"/>
-        <Label Text="{Binding Course.Description}" FontSize="18"/>
-        <Label Text="{Binding Course.Date}" />
-        <Label Text="{Binding Course.Time}" />
-        <Label Text="{Binding Course.Age}" />
-        <Label Text="{Binding Course.Materials}" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+            <Image Source="{Binding Course.Image}" 
+                   HeightRequest="250" 
+                   Aspect="AspectFill" 
+                   Margin="0,0,0,12" />
+
+            <Label Text="{Binding Course.Name}" 
+                   FontAttributes="Bold" 
+                   FontSize="20" 
+                   TextColor="#79B791" />
+
+            <Label Text="{Binding Course.Description}" 
+                   FontSize="18"
+                   TextColor="#000000" />
+
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Datum: " FontAttributes="Bold" />
+                        <Span Text="{Binding Course.Date}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Uhrzeit: " FontAttributes="Bold" />
+                        <Span Text="{Binding Course.Time}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Alter: " FontAttributes="Bold" />
+                        <Span Text="{Binding Course.Age}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Materialien: " FontAttributes="Bold" />
+                        <Span Text="{Binding Course.Materials}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

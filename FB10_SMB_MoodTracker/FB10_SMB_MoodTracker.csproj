@@ -87,7 +87,7 @@
 
 	<ItemGroup>
 	  <Content Include="Resources\Raw\courses.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	</ItemGroup>
 
