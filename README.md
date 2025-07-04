@@ -9,6 +9,8 @@
 - [UML-Klassendiagramm & Validation](#uml-klassendiagramm--validation)
 - [JSON](#json)
 - [Images - Troubleshooting](#images---troubleshooting)
+- [Detailseite](#detailseite)
+- [Bewertungseite - CRUD](#bewertungseite---crud)
 
 ## Einleitung  
 In diesem Projektjournal dokumentiere ich die Entwicklung meiner Applikation, die ich im Rahmen des Fachblocks 10 erstellt habe.
@@ -142,4 +144,55 @@ Dann habe ich es in meiner App umgesetzt. Die App liest die Kurse aus der JSON-D
 Beim Einfügen der Bilder ist mir ein Problem aufgefallen. Die Bilder wurden im Android-Emulator nicht angezeigt. Ich habe mehrere Stunden lang versucht, dieses Problem zu lösen. Nach längerer Recherche habe ich schließssich eine Lösung gefunden. Ich musste den Cache löschen. Das habe ich erreicht, indem ich den Emulator deinstalliert und erneut installiert habe.
 
 ![image](https://github.com/user-attachments/assets/f50d93d2-b8e6-463a-8b6c-9f2b40f689fb)
+
+## Detailseite
+Die Daten der Kurse werden aus der JSON-Datei ausgelesen und angezeigt. Zu den Daten gehören: Bild, Name, Beschreibung, Alter, Zeitpunkt und Material.
+
+![image](https://github.com/user-attachments/assets/3d6ab833-319b-412c-b258-fdf9b820fd75)
+
+## Bewertungsseite - CRUD
+Auf der Bewertungsseite kann man dem Kurs eine Bewertung von 1 bis 5 geben und einen optionalen Kommentar dazu schreiben. Die Bewertung wird auf dem Gerät gespeichert und kann später erneut aufgerufen werden.
+
+```
+    // Gets the saved rating from the repository
+    private async void LoadRating()
+    {
+        var saved = await repository.GetRatingAsync(Course.Name);
+        if (saved != null)
+        {
+            Rating = saved.Rating;
+            Comment = saved.Comment;
+        }
+        else
+        {
+            Rating = null;
+            Comment = string.Empty;
+        }
+    }
+
+    // Saves the rating and comment. It won't save if no rating was selected.
+    [RelayCommand]
+    public async Task SaveRatingAsync()
+    {
+        if (Rating == null)
+        {
+            await Application.Current.MainPage.DisplayAlert("Fehler", "Bitte wählen Sie eine Bewertung (1-5 Sterne) aus.", "OK");
+            return;
+        }
+
+        var entry = new RatingEntry
+        {
+            CourseName = Course.Name,
+            Rating = Rating,
+            Comment = Comment
+        };
+
+        await repository.UpsertRatingAsync(entry);
+
+        await Application.Current.MainPage.DisplayAlert("Erfolg", "Bewertung wurde gespeichert.", "OK");
+    }
+}
+
+```
+
 
