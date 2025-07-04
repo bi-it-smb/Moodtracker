@@ -31,6 +31,8 @@ In diesem Projektjournal dokumentiere ich die Entwicklung meiner Applikation, di
 | 2025-06-25  | .NET MAUI Projekt erstellt       |
 | 2025-06-27  | Images - Troubleshooting         |
 | 2025-07-02  | Detailseite erstellt & Navigation|
+| 2025-07-03  | Bewertungsformular erstellt      |
+| 2025-07-04  | Formatierung                     |
 
 
 ## Mockup  
