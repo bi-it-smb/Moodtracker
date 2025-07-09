@@ -4,24 +4,69 @@
 - [Einleitung](#einleitung)  
 - [Verwendete Technologien](#verwendete-technologien)  
 - [Funktionen](#funktionen)
+- [Anleitung](#anleitung)
+- [Modifikationsanleitung](#modifikationsanleitung)
 - [Projektverlauf](#projektverlauf)
 - [Mockup](#mockup)
 - [UML-Klassendiagramm & Validation](#uml-klassendiagramm--validation)
 - [JSON](#json)
 - [Images - Troubleshooting](#images---troubleshooting)
 - [Detailseite](#detailseite)
-- [Bewertungseite - CRUD](#bewertungseite---crud)
+- [Bewertungsseite - CRUD](#bewertungsseite---crud)
+- [Reflexion](#reflexion)
 
 ## Einleitung  
-In diesem Projektjournal dokumentiere ich die Entwicklung meiner Applikation, die ich im Rahmen des Fachblocks 10 erstellt habe.
+Diese App dient zur Darstellung und Übersicht von Kursangeboten für Kinder und Jugendliche. Die Kursdaten (inkl. Bild, Name, Beschreibung, Altersgruppe, Zeitpunkt und benötigtem Material) werden aus einer JSON-Datei geladen und in einer benutzerfreundlichen Oberfläche angezeigt.
+
+Die App ist für Eltern, Betreuer oder Kinder/Jugendliche gedacht, die sich über aktuelle Kurse informieren möchten.
 
 ## Verwendete Technologien  
 - **C#** – Zur Programmierung der Applikation  
 - **Figma** – Zur Skizzierung des Designs
 
 ## Funktionen  
-- Interaktive Navigation  
+- Interaktive Navigation
 - Bewertungssystem für Kurse
+
+## Anleitung
+### Starten der App
+Beim Öffnen der App werden automatisch alle Kurse aus der eingebundenen JSON-Datei geladen.
+
+### Kursübersicht
+Auf der Startseite werden alle Kurse in übersichtlicher Form dargestellt – inklusive Bild, Name, Beschreibung, Altersgruppe, Zeitpunkt und Material.
+
+### Details ansehen
+Du kannst auf das Bild eines Kurses klicken, um zur Detailseite zu gelangen. Dort findest du eine ausführlichere Beschreibung des Kurses.
+
+### Bewertung abgeben
+Über den Button „Eigene Bewertung abschicken“ kannst du den Kurs bewerten.
+Die Bewertung erfolgt mit 1 bis 5 Sternen und einem optionalen Kommentar.
+
+## Modifikationsanleitung
+Um einen neuen Kurs hinzuzufügen, muss ein neuer Eintrag im courses-Array der JSON-Datei erstellt werden.
+Dabei ist darauf zu achten, dass alle erforderlichen Attribute vollständig und korrekt benannt sind.
+
+### Beispiel
+```
+{
+  "name": "Neue Kursbezeichnung",
+  "description": "Kurzbeschreibung des Kurses.",
+  "image": "bildname.jpg",
+  "location": "Treffpunkt",
+  "date": "2025-07-12",
+  "time": "09:00 - 12:00",
+  "age": "10",
+  "materials": "Was mitzubringen ist",
+  "feedback": {
+    "enabled": true,
+    "type": "rating",
+    "hint": "Bewerten Sie den Kurs mit 1 bis 5 Sternen."
+  },
+  "rating": null,
+  "rating_timestamp": null,
+  "comment": null
+}
+```
 
 ## Projektverlauf
 | Datum       | Aufgabe / Meilenstein            |
@@ -195,4 +240,6 @@ Auf der Bewertungsseite kann man dem Kurs eine Bewertung von 1 bis 5 geben und e
 
 ```
 
-
+## Reflexion
+Während der Entwicklung der App habe ich viel über das Zusammenspiel von JSON-Daten, ViewModels und Benutzeroberfläche in .NET MAUI gelernt. Ein technischer Stolperstein war das Einbinden der Bilder im Android-Emulator. Trotz korrekter Pfade wurden sie zunächst nicht angezeigt. Die Lösung – Emulator löschen, neu installieren und den Cache leeren – hat mir gezeigt, wie wichtig Geduld und systematische Fehlersuche sind.
+Rückblickend bin ich mit dem Projekt insgesamt zufrieden. Aufgrund von Zeitmangel konnte ich jedoch nicht alle Funktionen vollständig umsetzen. Die Bewertungsseite muss noch optisch überarbeitet werden, und mit der aktuellen Lösung zur Speicherung der Bewertungen bin ich ebenfalls nicht ganz zufrieden. In einem nächsten Schritt würde ich diese Bereiche verbessern.
