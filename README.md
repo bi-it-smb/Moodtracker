@@ -186,7 +186,7 @@ Dann habe ich es in meiner App umgesetzt. Die App liest die Kurse aus der JSON-D
 ![image](https://github.com/user-attachments/assets/b815346e-7a81-4fbe-b411-6685c6c64444)
 
 ## Images - Troubleshooting
-Beim Einfügen der Bilder ist mir ein Problem aufgefallen. Die Bilder wurden im Android-Emulator nicht angezeigt. Ich habe mehrere Stunden lang versucht, dieses Problem zu lösen. Nach längerer Recherche habe ich schließssich eine Lösung gefunden. Ich musste den Cache löschen. Das habe ich erreicht, indem ich den Emulator deinstalliert und erneut installiert habe.
+Beim Einfügen der Bilder ist mir ein Problem aufgefallen. Die Bilder wurden im Android-Emulator nicht angezeigt. Ich habe mehrere Stunden lang versucht, dieses Problem zu lösen. Nach längerer Recherche habe ich schliessich eine Lösung gefunden. Ich musste den Cache löschen. Das habe ich erreicht, indem ich den Emulator deinstalliert und erneut installiert habe.
 
 ![image](https://github.com/user-attachments/assets/f50d93d2-b8e6-463a-8b6c-9f2b40f689fb)
 
