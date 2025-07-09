@@ -2,11 +2,11 @@
 
 ## Inhaltsverzeichnis  
 - [Einleitung](#einleitung)  
-- [Verwendete Technologien](#verwendete-technologien)  
+- [Verwendete Technologien](#verwendete-technologien)
+- [Projektverlauf](#projektverlauf)
 - [Funktionen](#funktionen)
 - [Anleitung](#anleitung)
 - [Modifikationsanleitung](#modifikationsanleitung)
-- [Projektverlauf](#projektverlauf)
 - [Mockup](#mockup)
 - [UML-Klassendiagramm & Validation](#uml-klassendiagramm--validation)
 - [JSON](#json)
@@ -23,6 +23,20 @@ Die App ist für Eltern, Betreuer oder Kinder/Jugendliche gedacht, die sich übe
 ## Verwendete Technologien  
 - **C#** – Zur Programmierung der Applikation  
 - **Figma** – Zur Skizzierung des Designs
+
+## Projektverlauf
+| Datum       | Aufgabe / Meilenstein            |
+|-------------|----------------------------------|
+| 2025-06-18  | Mockup angefangen                |
+| 2025-06-21  | Mockup fertiggestellt            |
+| 2025-06-25  | UML & Validation erstellt        |
+| 2025-06-25  | JSON überarbeitet                |
+| 2025-06-25  | .NET MAUI Projekt erstellt       |
+| 2025-06-27  | Images - Troubleshooting         |
+| 2025-07-02  | Detailseite erstellt & Navigation|
+| 2025-07-03  | Bewertungsformular erstellt      |
+| 2025-07-04  | Formatierung                     |
+| 2025-07-09  | Fertigstellung                   |
 
 ## Funktionen  
 - Interaktive Navigation
@@ -67,20 +81,6 @@ Dabei ist darauf zu achten, dass alle erforderlichen Attribute vollständig und 
   "comment": null
 }
 ```
-
-## Projektverlauf
-| Datum       | Aufgabe / Meilenstein            |
-|-------------|----------------------------------|
-| 2025-06-18  | Mockup angefangen                |
-| 2025-06-21  | Mockup fertiggestellt            |
-| 2025-06-25  | UML & Validation erstellt        |
-| 2025-06-25  | JSON überarbeitet                |
-| 2025-06-25  | .NET MAUI Projekt erstellt       |
-| 2025-06-27  | Images - Troubleshooting         |
-| 2025-07-02  | Detailseite erstellt & Navigation|
-| 2025-07-03  | Bewertungsformular erstellt      |
-| 2025-07-04  | Formatierung                     |
-
 
 ## Mockup  
 Ich habe mithilfe von Figma ein Mockup erstellt, um das Design meiner Applikation zu planen. Hier ist ein Screenshot des Mockups:
